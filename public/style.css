@@ -120,3 +120,8 @@ form input:nth-child(2){
     border: 0.1rem solid #7AA7C7;
     border-radius: 0.3rem;
 }
+
+.selecionado {
+    border: 2px solid green;
+    background-color: lightgreen;
+  }

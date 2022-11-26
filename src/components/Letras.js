@@ -6,13 +6,18 @@ export default function Letras(props){
     
     
     const {palavra}=props  
-const [value,setValue]=useState()
+const [botaoClicado,setBotaoClicado]=useState([])
 
-    function test(e){
+function test(letra){
     
-        const elemento =e.target.innerText.toLowerCase();
-        setValue(elemento)
-        const indices = [];
+    const indices = [];
+    const elemento =letra.toLowerCase();
+    
+    if(!botaoClicado.includes(elemento)){
+        setBotaoClicado([...botaoClicado,elemento])
+    
+
+
         let indice = palavra.indexOf(elemento);
 
 while (indice !== -1) {
@@ -20,18 +25,21 @@ while (indice !== -1) {
   indice = palavra.indexOf(elemento, indice + 1);
 //console.log(palavra.includes(elemento))
 //console.log(indice)
-}
 
-console.log(e.target.innerText);
+    }
+
+
+//console.log(e.target.innerText);
 console.log(indices)
 console.log(palavra)
     }
+}
 
     return(   
 <ul>
         {alfabeto.map(letra=>(
     
-    <button disabled ={!palavra ? true : false} onClick={test} className= {!palavra? "teclado bloqueado": "teclado liberado" }>{letra.toUpperCase()}  </button>
+    <button disabled ={!palavra ? true : false || botaoClicado.includes(letra)? true : false } onClick={()=>test(letra)} className={!palavra || botaoClicado.includes(letra) ?"teclado bloqueado": "teclado liberado"}/*{`${botaoClicado.includes(letra) && "selecionado"} ${!palavra? "teclado bloqueado": "teclado liberado"}`}*/ >{letra.toUpperCase()}  </button>
             
 ))}
    </ul>

@@ -11,6 +11,7 @@ const [underLine, setUnderLine]=useState([])
 
 function escolherPalavra(){
 
+
     const palavra = palavras[rand]
         setPalavraSelecionada(palavra)
 
@@ -22,8 +23,6 @@ const resultado =palavra.split("")
         console.log(resultado)
        // console.log(trocado)
         
-     
-
     }
 
 
