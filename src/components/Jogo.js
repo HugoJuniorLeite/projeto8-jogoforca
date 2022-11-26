@@ -6,33 +6,25 @@ export default function Jogo(){
 
 const rand = Math.random()*palavras.length |0;
 const [palavraSelecionada, setPalavraSelecionada]=useState("")
-
+const [underLine, setUnderLine]=useState([])
 
 
 function escolherPalavra(){
 
-        setPalavraSelecionada(palavras[rand])
+    const palavra = palavras[rand]
+        setPalavraSelecionada(palavra)
 
+const resultado =palavra.split("")
   //      const palavraSelecionada = palavras[rand];
         
-    //    const resultado = palavraSelecionada.split("")
-      //  console.log(resultado)
+  setUnderLine([...resultado,"_"])
+
+        console.log(resultado)
+       // console.log(trocado)
         
-     //   const elemento = 'a';
-       // const indices = [];
-      //  let idx = palavraSelecionada.indexOf(elemento);
+     
 
-//while (idx !== -1) {
-  //indices.push(idx);
- // idx = palavraSelecionada.indexOf(elemento, idx + 1);
-
- console.log(palavraSelecionada)
-
-}
-
-//console.log(indices); 
-
-    //}
+    }
 
 
  
@@ -43,6 +35,12 @@ function escolherPalavra(){
         <img src="./assets/forca0.png" alt="desejo da forca"/>
         <button onClick={escolherPalavra} className="star">Escolher Palavra</button>
         </div>
+
+        {underLine.map(e=>(
+            <div>{"_"}</div>
+        ))}
+
+       
         <Letras palavra={palavraSelecionada}/>
         <span className="chutar-resposta">
         <strong>Já Sei a resposta!</strong>
