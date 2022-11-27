@@ -17,7 +17,7 @@ img{
     min-height: 11.666rem;
     margin-top: 5.9rem ;
     margin-left: 3.8rem;
-    
+    margin-bottom: 7.333rem;    
 }
 
 body{
@@ -124,4 +124,22 @@ form input:nth-child(2){
 .selecionado {
     border: 2px solid green;
     background-color: lightgreen;
+  }
+
+.teste{
+display: flex;
+justify-content: flex-end;
+   margin-right: 6.1rem;
+  }
+
+  .underline{
+font-family: "Noto Sans";
+font-size: 5rem;
+font-weight: 700;
+line-height: 6.8rem;
+letter-spacing: 0em;
+text-align: center;
+margin-right: 1rem;
+margin-top: -17.333rem;
+
   }
