@@ -70,7 +70,7 @@ export default function Letras(props) {
     return (
         <ul>
             {alfabeto.map(letra => (
-                <button disabled={!palavraSelecionada ? true : false || botaoClicado.includes(letra) ? true : false}
+                <button data-test="letter" disabled={!palavraSelecionada ? true : false || botaoClicado.includes(letra) ? true : false}
                     onClick={() => clicouTeclado(letra)}
                     className={!palavraSelecionada || botaoClicado.includes(letra) ? "teclado bloqueado" : "teclado liberado"}>
                     {letra.toUpperCase()}

@@ -37,13 +37,13 @@ export default function Jogo(props) {
 
         <>
             <div className="corpo">
-                <img src={`./assets/forca${erros}.png`} alt="desenho da forca" />
-                <button onClick={escolherPalavra} className="star">Escolher Palavra</button>
+                <img data-test="game-image" src={`./assets/forca${erros}.png`} alt="desenho da forca" />
+                <button data-test="choose-word" onClick={escolherPalavra} className="star">Escolher Palavra</button>
             </div>
 
             <div className={gameOver === false ? "teste" : "teste perdeu"} >
                 {underLine.map(e => (
-                    <span className={vitoria === false ? "underline" : "underline ganhou"}>{e}</span>
+                    <span data-test="word" className={vitoria === false ? "underline" : "underline ganhou"}>{e}</span>
                 ))}
 
             </div>
