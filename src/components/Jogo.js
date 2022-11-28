@@ -37,15 +37,13 @@ setHabilitaInput(!true)
         console.log(palavra)
     }
     
-
-
     function chutar(){
         
-        if( palpite === "nabo"){
+        if( palpite === palavraSelecionada){
             setPalavraSelecionada("")
             setBotaoClicado("")
             setAcertos(0)
-            setUnderLine(palavraSelecionada.slice(""))
+            setUnderLine(palavraSelecionada.split())
             setVitoria(true)
         }
         
@@ -53,17 +51,12 @@ setHabilitaInput(!true)
             setPalavraSelecionada("")
             setBotaoClicado("")
             setErros(6)
-            setUnderLine(palavraSelecionada.slice(""))
+            setUnderLine(palavraSelecionada.split())
             setGameOver(true)
-
 
         }
     }
     
-        
-        console.log(palpite,"palpite")
-
-
     return (
 
         <>
