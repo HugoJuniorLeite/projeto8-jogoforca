@@ -41,9 +41,9 @@ export default function Jogo(props) {
                 <button data-test="choose-word" onClick={escolherPalavra} className="star">Escolher Palavra</button>
             </div>
 
-            <div data-test="word" data-answer={palavraSelecionada} className={gameOver === false ? "teste" : "teste perdeu"} >
+            <div  data-answer={palavraSelecionada} className={gameOver === false ? "teste" : "teste perdeu"} >
                 {underLine.map(e => (
-                    <span className={vitoria === false ? "underline" : "underline ganhou"}>{e}</span>
+                    <span data-test="word" className={vitoria === false ? "underline" : "underline ganhou"}>{e}</span>
                 ))}
 
             </div>
