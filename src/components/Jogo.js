@@ -13,10 +13,13 @@ export default function Jogo(props) {
     const [underLine, setUnderLine] = useState([])
     const [vitoria, setVitoria] =useState(false)
     const [gameOver, setGameOver]=useState(false)
+    const [palpite, setPalpite]=useState("")
+    const [habilitaInput, setHabilitaInput]=useState(true)
     const testeLetra = []
+
    
     function escolherPalavra() {
-
+setHabilitaInput(!true)
     setBotaoClicado("")
     setAcertos(0)
     setErros(0)
@@ -25,17 +28,41 @@ export default function Jogo(props) {
 
         const palavra = palavras[rand]
         setPalavraSelecionada(palavra)
-
         const resultado = palavra.split("")
+
         for (let i = 0; i < resultado.length; i++) {
             testeLetra.push("_")
             setUnderLine(testeLetra)
         }
         console.log(palavra)
-
-        
-
     }
+    
+
+
+    function chutar(){
+        
+        if( palpite === "nabo"){
+            setPalavraSelecionada("")
+            setBotaoClicado("")
+            setAcertos(0)
+            setUnderLine(palavraSelecionada.slice(""))
+            setVitoria(true)
+        }
+        
+        else{
+            setPalavraSelecionada("")
+            setBotaoClicado("")
+            setErros(6)
+            setUnderLine(palavraSelecionada.slice(""))
+            setGameOver(true)
+
+
+        }
+    }
+    
+        
+        console.log(palpite,"palpite")
+
 
     return (
 
@@ -47,9 +74,7 @@ export default function Jogo(props) {
 
             <div className={gameOver===false? "teste" : "teste perdeu" } >
                 {underLine.map(e => (
-
                     <span className={vitoria===false? "underline" : "underline ganhou"}>{e}</span>
-
                 ))}
 
             </div>
@@ -63,10 +88,11 @@ export default function Jogo(props) {
                 />
             <span className="chutar-resposta">
                 <strong>Já Sei a resposta!</strong>
-                <form action="">
-                    <input></input>
-                    <input type="submit" value="Chutar"></input>
-                </form>
+                
+                    <input disabled={habilitaInput} type="text"onChange={(e)=>setPalpite(e.target.value)}
+                    value={palpite}></input>
+                    <button onClick={chutar}>Chutar</button>
+                
             </span>
         </>
     )

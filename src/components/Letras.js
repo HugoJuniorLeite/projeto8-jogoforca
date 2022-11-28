@@ -22,7 +22,7 @@ export default function Letras(props) {
         let contErro=0;
         let indice = palavraSelecionada.indexOf(elemento);
 
-        if(indice == -1){
+        if(indice === -1){
             contErro =contErro +1
         }
         setErros(contErro+erros)
@@ -66,14 +66,16 @@ export default function Letras(props) {
 
     setPalavraSelecionada("")
     setBotaoClicado("")
+    setAcertos(0)
     setVitoria(true)
 
    }
 
    if( erros > 4){
 
-    setPalavraSelecionada("")
-    setBotaoClicado("")
+   // setPalavraSelecionada("")
+   // setBotaoClicado("")
+   // setAcertos(0)
     setUnderLine(palavraSeparada)
     setGameOver(true)
 
