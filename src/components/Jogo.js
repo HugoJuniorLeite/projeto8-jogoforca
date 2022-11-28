@@ -16,6 +16,7 @@ export default function Jogo(props) {
 
 
     function escolherPalavra() {
+
         setHabilitaInput(!true)
         setBotaoClicado("")
         setAcertos(0)

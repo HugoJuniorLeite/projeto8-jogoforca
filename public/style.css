@@ -1,5 +1,5 @@
 html{
---color-button:#27AE60;
+--color-button-or-vitoria:#27AE60;
 --font-color-button:#FFFFFF;
 
 --border-teclado:#7AA7C7;
@@ -13,6 +13,8 @@ html{
 --background-chute:#E1ECF4;
 --chute-color: #3C76A1;
 --chute-border:#7AA7C7;
+--color-derrota:#FF0000;
+
 
 font-size: 62.5%;
 }
@@ -45,7 +47,7 @@ body{
     min-width: 5rem;
     max-height: 6rem;
     min-height: 1.5rem;
-    background-color: var(--color-button);
+    background-color: var(--color-button-or-vitoria);
     color: var(--font-color-button);
     margin-top: 8.9rem;
     margin-right: 5.3rem;
@@ -116,7 +118,7 @@ input{
 
 .chute{
     background-color: var(--background-chute);
-    color: var(--chute-color);
+    color: var(--chute-color-or-vitoria);
     width: 10rem;    
     height: 4rem;
     margin-left: 1.5rem;
@@ -143,14 +145,16 @@ margin-top: -17.333rem;
   }
 
   .ganhou{
-    color: green;
+    color: var(--color-button-or-vitoria);
   }
 
   .perdeu{
-    color:red;
+    color:var(--color-derrota);
   }
 
-
+button:hover{
+    opacity: 0.7;
+}
 
     @media screen and (max-width: 770px){
 ul{
@@ -192,6 +196,4 @@ Strong{
 .chute{
     width: 5rem;    
 }
-
-
 }
