@@ -100,7 +100,7 @@ ul{
 
 
 
-input:nth-child(1){
+input{
     background-color: #FFFFFF;
     color: #3C76A1;
     width: 35.3rem;
@@ -111,7 +111,7 @@ input:nth-child(1){
 }
 
 
-form input:nth-child(2){
+.chute{
     background-color: #E1ECF4;
     color: #3C76A1;
     width: 10rem;    

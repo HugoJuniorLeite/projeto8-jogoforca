@@ -1,5 +1,5 @@
 
-export default function chutar(props){
+export default function Chute(props) {
 
     const { palavraSelecionada, setPalavraSelecionada,
         underLine, setUnderLine, acertos, setAcertos,
@@ -8,18 +8,17 @@ export default function chutar(props){
         palpite, setPalpite,
         habilitaInput, setHabilitaInput } = props;
 
+    function chutar() {
 
-function chutar(){
-        
-        if( palpite === palavraSelecionada){
+        if (palpite === palavraSelecionada) {
             setPalavraSelecionada("")
             setBotaoClicado("")
             setAcertos(0)
             setUnderLine(palavraSelecionada.split())
             setVitoria(true)
         }
-        
-        else{
+
+        else {
             setPalavraSelecionada("")
             setBotaoClicado("")
             setErros(6)
@@ -29,14 +28,14 @@ function chutar(){
         }
     }
 
-return(
- <span className="chutar-resposta">
-                <strong>Já Sei a resposta!</strong>
-                
-                    <input disabled={habilitaInput} type="text"onChange={(e)=>setPalpite(e.target.value)}
-                    value={palpite}></input>
-                    <button onClick={chutar}>Chutar</button>
-                
-            </span>
-)
-            }
+    return (
+        <span className="chutar-resposta">
+            <strong>Já Sei a resposta!</strong>
+
+            <input disabled={habilitaInput} type="text" onChange={(e) => setPalpite(e.target.value)}
+                value={palpite}></input>
+            <button className="chute" onClick={chutar}>Chutar</button>
+
+        </span>
+    )
+}

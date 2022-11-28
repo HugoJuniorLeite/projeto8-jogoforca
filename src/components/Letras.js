@@ -1,4 +1,3 @@
-
 export default function Letras(props) {
 
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -38,8 +37,8 @@ export default function Letras(props) {
         acerto = indices.length + acertos;
 
         for (let i = 0; i < indices.length; i++) {
-            let test = indices[i];
-            clone[test] = elemento;
+            let indiceLetra = indices[i];
+            clone[indiceLetra] = elemento;
         }
 
         setAcertos(cont + acertos);
@@ -49,33 +48,23 @@ export default function Letras(props) {
             setBotaoClicado([...botaoClicado, elemento]);
         }
 
-        for (let i = 0; i < palavraSeparada.length; i++) {
-            if (elemento === palavraSeparada[i]) {
-            }
+        if (underLine.length === acerto) {
 
-            if (underLine.length === acerto) {
-
-                setPalavraSelecionada("")
-                setBotaoClicado("")
-                setAcertos(0)
-                setVitoria(true)
-            }
-
-            if (erros > 4) {
-
-                setPalavraSelecionada("")
-                setBotaoClicado("")
-                setAcertos(0)
-                setUnderLine(palavraSeparada)
-                setGameOver(true)
-            }
-
+            setPalavraSelecionada("")
+            setBotaoClicado("")
+            setAcertos(0)
+            setVitoria(true)
         }
 
-        console.log(cont, "contador");
-        console.log(acertos, "acertos");
-        console.log(acerto, "acerto");
-        console.log(clone, "clone");
+        if (erros > 4) {
+
+            setPalavraSelecionada("")
+            setBotaoClicado("")
+            setAcertos(0)
+            setUnderLine(palavraSeparada)
+            setGameOver(true)
+        }
+
     }
 
     return (
