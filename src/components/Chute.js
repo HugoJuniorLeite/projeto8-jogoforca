@@ -32,9 +32,9 @@ export default function Chute(props) {
         <span className="chutar-resposta">
             <strong>Já Sei a resposta!</strong>
 
-            <input data-test="guess-button" disabled={habilitaInput} type="text" onChange={(e) => setPalpite(e.target.value)}
+            <input data-test="guess-input" disabled={habilitaInput} type="text" onChange={(e) => setPalpite(e.target.value)}
                 value={palpite}></input>
-            <button data-test="guess-input" className="chute" onClick={chutar}>Chutar</button>
+            <button data-test="guess-button" className="chute" onClick={chutar}>Chutar</button>
 
         </span>
     )
