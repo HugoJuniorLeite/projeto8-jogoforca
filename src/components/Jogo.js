@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Letras from "./Letras"
 import palavras from "./palava"
+import Chute from "./Chute";
 
 export default function Jogo(props) {
 
@@ -16,7 +17,6 @@ export default function Jogo(props) {
     const [palpite, setPalpite]=useState("")
     const [habilitaInput, setHabilitaInput]=useState(true)
     const testeLetra = []
-
    
     function escolherPalavra() {
 setHabilitaInput(!true)
@@ -37,25 +37,7 @@ setHabilitaInput(!true)
         console.log(palavra)
     }
     
-    function chutar(){
-        
-        if( palpite === palavraSelecionada){
-            setPalavraSelecionada("")
-            setBotaoClicado("")
-            setAcertos(0)
-            setUnderLine(palavraSelecionada.split())
-            setVitoria(true)
-        }
-        
-        else{
-            setPalavraSelecionada("")
-            setBotaoClicado("")
-            setErros(6)
-            setUnderLine(palavraSelecionada.split())
-            setGameOver(true)
-
-        }
-    }
+    
     
     return (
 
@@ -79,14 +61,16 @@ setHabilitaInput(!true)
             vitoria={vitoria} setVitoria={setVitoria}
             gameOver={gameOver} setGameOver={setGameOver}
                 />
-            <span className="chutar-resposta">
-                <strong>Já Sei a resposta!</strong>
-                
-                    <input disabled={habilitaInput} type="text"onChange={(e)=>setPalpite(e.target.value)}
-                    value={palpite}></input>
-                    <button onClick={chutar}>Chutar</button>
-                
-            </span>
+           <Chute palavraSelecionada={palavraSelecionada} setPalavraSelecionada={setPalavraSelecionada} 
+            underLine={underLine} setUnderLine={setUnderLine}
+            acertos={acertos} setAcertos={setAcertos}
+            erros={erros} setErros={setErros}
+            botaoClicado={botaoClicado} setBotaoClicado={setBotaoClicado}
+            vitoria={vitoria} setVitoria={setVitoria}
+            gameOver={gameOver} setGameOver={setGameOver}
+            palpite={palpite} setPalpite={setPalpite}
+            habilitaInput={habilitaInput} setHabilitaInput={setHabilitaInput}
+            />
         </>
     )
 
